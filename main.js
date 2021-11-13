@@ -19,6 +19,7 @@
     var count = text.value.length;
     var counting = maxLength - count;
     if (count > maxLength) {
+      text.value = text.value.substring(0, maxLength);
       counterOutput.classList.add("text-color-red");
     } else {
       counterOutput.classList.remove("text-color-red");
