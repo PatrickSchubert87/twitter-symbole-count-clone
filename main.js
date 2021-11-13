@@ -6,12 +6,16 @@
   var maxLength = 20;
 
   /**
-   * First Approach
-   * - This approach uses too many eventListeners
-   * - This isn't a good approach because it's not DRY (Don't Repeat Yourself)
+   * Second Approach
+   * - This approach uses too multiple eventListeners with one function
+   * - This is a better approach because it's not DRY (Don't Repeat Yourself) and uses only one function
    */
 
-  text.addEventListener("keyup", () => {
+  text.addEventListener('change', textCounter);
+  text.addEventListener('keydown', textCounter);
+  text.addEventListener('keyup', textCounter);
+
+  function textCounter() {
     var count = text.value.length;
     var counting = maxLength - count;
     if (count > maxLength) {
@@ -20,25 +24,38 @@
       counterOutput.classList.remove("text-color-red");
     }
     counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  });
-  text.addEventListener("keydown", () => {
-    var count = text.value.length;
-    var counting = maxLength - count;
-    if (count > maxLength) {
-      counterOutput.classList.add("text-color-red");
-    } else {
-      counterOutput.classList.remove("text-color-red");
-    }
-    counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  });
-  text.addEventListener("change", () => {
-    var count = text.value.length;
-    var counting = maxLength - count;
-    if (count > maxLength) {
-      counterOutput.classList.add("text-color-red");
-    } else {
-      counterOutput.classList.remove("text-color-red");
-    }
-    counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  });
+  }
+
+  // text.addEventListener("keyup", () => {
+  //   var count = text.value.length;
+  //   var counting = maxLength - count;
+  //   if (count > maxLength) {
+  //     counterOutput.classList.add("text-color-red");
+  //   } else {
+  //     counterOutput.classList.remove("text-color-red");
+  //   }
+  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
+  // });
+  // text.addEventListener("keydown", () => {
+  //   var count = text.value.length;
+  //   var counting = maxLength - count;
+  //   if (count > maxLength) {
+  //     counterOutput.classList.add("text-color-red");
+  //   } else {
+  //     counterOutput.classList.remove("text-color-red");
+  //   }
+  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
+  // });
+  // text.addEventListener("change", () => {
+  //   var count = text.value.length;
+  //   var counting = maxLength - count;
+  //   if (count > maxLength) {
+  //     counterOutput.classList.add("text-color-red");
+  //   } else {
+  //     counterOutput.classList.remove("text-color-red");
+  //   }
+  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
+  // });
+
 })();
+
