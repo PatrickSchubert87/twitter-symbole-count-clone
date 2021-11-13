@@ -26,37 +26,5 @@
     }
     counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
   }
-
-  // text.addEventListener("keyup", () => {
-  //   var count = text.value.length;
-  //   var counting = maxLength - count;
-  //   if (count > maxLength) {
-  //     counterOutput.classList.add("text-color-red");
-  //   } else {
-  //     counterOutput.classList.remove("text-color-red");
-  //   }
-  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  // });
-  // text.addEventListener("keydown", () => {
-  //   var count = text.value.length;
-  //   var counting = maxLength - count;
-  //   if (count > maxLength) {
-  //     counterOutput.classList.add("text-color-red");
-  //   } else {
-  //     counterOutput.classList.remove("text-color-red");
-  //   }
-  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  // });
-  // text.addEventListener("change", () => {
-  //   var count = text.value.length;
-  //   var counting = maxLength - count;
-  //   if (count > maxLength) {
-  //     counterOutput.classList.add("text-color-red");
-  //   } else {
-  //     counterOutput.classList.remove("text-color-red");
-  //   }
-  //   counterOutput.textContent = `Your text includes ${text.value.length} of ${maxLength} characters. You have ${counting} characters left`;
-  // });
-
 })();
 
