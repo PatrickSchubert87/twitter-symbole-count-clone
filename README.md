@@ -1,11 +1,11 @@
 # twitter-symbole-count-clone
 
-## First approach
+## Second approach
 
-The first approache uses: 
+The second approache uses: 
 
 - an IIFE function
-- holds multiple eventListeners which called seperatelly each time
-- each eventListener includes the same code (is not DRY optimized)
+- calls multiple eventListeners to call one function
+- to get a DRY approach, I created a seperate function
 
 [Link to site](https://patrickschubert87.github.io/twitter-symbole-count-clone/)
