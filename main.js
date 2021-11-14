@@ -6,20 +6,23 @@
   var maxLength = 20;
 
   /**
-   * Second Approach
-   * - This approach uses too multiple eventListeners with one function
-   * - This is a better approach because it's not DRY (Don't Repeat Yourself) and uses only one function
+   * Third Approach
+   * - This approach uses only one eventListeners with one function call
+   * - The events are called with a froEach Array methode
+   * - This is a better approach because now it's DRY (Don't Repeat Yourself) and uses only one function
+   * - Also this approach uses a slice methode to exclude characters after maxLength is reached
    */
 
-  text.addEventListener('change', textCounter);
-  text.addEventListener('keydown', textCounter);
-  text.addEventListener('keyup', textCounter);
+  ['keyup', 'keydown', 'change'].forEach(e => {
+    text.addEventListener(e, textCounter);
+  });
 
   function textCounter() {
     var count = text.value.length;
     var counting = maxLength - count;
     if (count > maxLength) {
-      text.value = text.value.substring(0, maxLength);
+      // text.value = text.value.substring(0, maxLength);
+      text.value = text.value.slice(0, maxLength);
       counterOutput.classList.add("text-color-red");
     } else {
       counterOutput.classList.remove("text-color-red");
