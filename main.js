@@ -3,7 +3,7 @@
   var text = document.querySelector("#text");
 
   var counterOutput = document.querySelector(".counter-output");
-  var maxLength = 20;
+  var maxLength = 300;
 
   /**
    * Third Approach
